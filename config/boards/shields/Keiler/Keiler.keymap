@@ -155,16 +155,16 @@
         fun_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮          ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │    7     │    8     │    9     │          │          │          │          │          │          │          │
-          &bt BT_CLR   &mp F7 N7  &mp F8 N8  &mp F9 N9  &kp HOME              &kp PG_UP  &none      &none      &none      &none
+        //│          │          │          │          │          │          │    F12   │    F7    │   F8     │    F9    │          │
+          &sys_reset &bt BT_CLR &out OUT_TOG  &none      &none               &kp F12     &kp F7     &kp F8     &kp F9     &kp PSCRN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │    4     │    5     │    6     │          │          │          │          │          │          │          │
-          &bt BT_SEL 1 &mp F4 N4  &mp F5 N5  &mp F6 N6  &kp END               &kp PG_DN  &kp LEFT   &kp UP     &kp RIGHT  &none
+        //│          │          │          │          │          │          │   F11    │    F6    │    F5    │    F6    │  crop    │
+          &bootloader &bt bt_NXT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2       &kp F11   &kp F6     &kp F5     &kp F6    &kp LC(LS(PSCRN))
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │    1     │    2     │    3     │    0     │          │          │          │          │          │          │
-          &bt BT_SEL 0 &mp F1 N1  &mp F2 N2  &mp F3 N3  &mp F10 N0            &none      &none      &kp DOWN   &none      &none
+        //│          │          │          │          │          │          │   F10    │    F1    │     F2   │    F3    │ mac crop │
+          &none      &bt BT_PRV  &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5      &kp F10     &kp F1     &kp F2    &kp F3    &kp LG(LS(N4))
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                  &none      &kp LSHFT  &cs                   &none      &none      &none
+                                  &none       &none      &none                   &none      &none      &none
         //                      ╰──────────┴──────────┴──────────╯          ╰──────────┴──────────┴──────────╯
             >;
         };
