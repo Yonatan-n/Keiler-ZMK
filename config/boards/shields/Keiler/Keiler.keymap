@@ -125,12 +125,12 @@
            &kp ESC  &kp LA(LEFT) &kp LG(F) &kp LA(RIGHT) &kp LGUI            &kp PG_UP &kp LG (LEFT) &kp UP  &kp LG(RIGHT) &kp LGUI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │          │          │          │          │          │          │
-           &sk RALT   &sk LCTRL  &sk LSHFT  &sk LGUI   &sk LCTRL               &kp PG_DN  &kp LEFT   &kp UP     &kp RIGHT  &none
+           &sk RALT   &sk LCTRL  &sk LSHFT  &sk LGUI   &sk LCTRL             &kp PG_DN  &kp LEFT   &kp DOWN    &kp RIGHT  &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │          │          │          │          │          │          │
-          &bt BT_SEL 0 &mp F1 N1  &mp F2 N2  &mp F3 N3  &mp F10 N0            &none      &none      &kp DOWN   &none      &none
+           &kp LG(Z)   &kp LG(X)  &kp LG(C)  &kp TAB    &kp LG(V)             &kp RET    &kp BSPC   &kp RALT  &kp LCTRL   &kp LGUI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                  &none      &kp LSHFT  &cs                   &none      &none      &none
+                                  &trans     &kp trans  &trans                 &trans    &mo FUN    &trans
         //                      ╰──────────┴──────────┴──────────╯          ╰──────────┴──────────┴──────────╯
             >;
         };
