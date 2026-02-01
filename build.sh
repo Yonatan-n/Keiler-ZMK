@@ -24,8 +24,3 @@ cp build/dongle/zephyr/zmk.uf2 firmware/${TIMESTAMP}_dongle.uf2
 west build -s zmk/app -b nice_nano -d build/nn_reset -p \
   -- -DSHIELD=settings_reset
 cp build/nn_reset/zephyr/zmk.uf2 firmware/nn_reset.uf2
-
-# XIAO reset
-west build -s zmk/app -b nice_nano -d build/xia_reset -p \
-  -- -DSHIELD=settings_reset
-cp build/xia_reset/zephyr/zmk.uf2 firmware/xia_reset.uf2
