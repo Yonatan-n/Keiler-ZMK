@@ -3,19 +3,4 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    strategy:
-      matrix:
-        include:
-          - board: nice_nano
-            shield: Keiler_left
-          - board: nice_nano
-            shield: Keiler_right
-          - board: seeeduino_xiao_ble
-            shield: Keiler_dongle
-          - board: nice_nano
-            shield: settings_reset
-          - board: seeeduino_xiao_ble
-            shield: settings_reset
-    with:
-      board: ${{ matrix.board }}
-      shield: ${{ matrix.shield }}
+  
