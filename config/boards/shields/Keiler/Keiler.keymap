@@ -122,7 +122,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮          ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │          │          │          │          │          │          │
-           &kp ESC  &kp LA(LEFT) &kp LC(F) &kp LA(RIGHT) &kp LGUI            &kp PG_UP &kp LC(HOME) &kp UP  &kp LC(END) &kp LCTRL
+           &kp ESC  &kp LA(LEFT) &kp LC(F) &kp LA(RIGHT) &kp LGUI            &kp PG_UP    &kp HOME    &kp UP    &kp END   &kp LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │          │          │          │          │          │          │
            &sk RALT   &sk LGUI  &sk LSHFT  &sk LCTRL   &sk LALT             &kp PG_DN  &kp LEFT   &kp DOWN    &kp RIGHT  &kp DEL
