@@ -122,13 +122,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮          ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │          │          │          │          │          │          │
-           &kp ESC  &kp LA(LEFT) &kp LG(F) &kp LA(RIGHT) &kp LGUI            &kp PG_UP &kp LG (LEFT) &kp UP  &kp LG(RIGHT) &kp LGUI
+           &kp ESC  &kp LA(LEFT) &kp LC(F) &kp LA(RIGHT) &kp LGUI            &kp PG_UP &kp LC(HOME) &kp UP  &kp LC(END) &kp LCTRL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │          │          │          │          │          │          │
-           &sk RALT   &sk LCTRL  &sk LSHFT  &sk LGUI   &sk LCTRL             &kp PG_DN  &kp LEFT   &kp DOWN    &kp RIGHT  &kp DEL
+           &sk RALT   &sk LGUI  &sk LSHFT  &sk LCTRL   &sk LALT             &kp PG_DN  &kp LEFT   &kp DOWN    &kp RIGHT  &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │          │          │          │          │          │          │
-           &kp LG(Z)   &kp LG(X)  &kp LG(C)  &kp TAB    &kp LG(V)             &kp RET    &kp BSPC   &kp RALT  &kp LCTRL   &kp LGUI
+           &kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp TAB    &kp LC(V)             &kp RET    &kp BSPC   &kp LCTRL  &kp LGUI   &kp LCTRL
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                   &trans     &trans    &trans                 &trans    &mo FUN    &trans
         //                      ╰──────────┴──────────┴──────────╯          ╰──────────┴──────────┴──────────╯
@@ -139,13 +139,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮          ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │          │     '    │     &    │     `    │     ~    │          │
-           &kp ESC    &kp LA(LEFT) &kp LG(F) &kp LA(RIGHT) &kp LCTRL          &kp SQT   &kp AMPS   &kp GRAVE  &kp TILDE   &trans
+           &kp ESC    &kp LA(LEFT) &kp LC(F) &kp LA(RIGHT) &kp LCTRL          &kp SQT   &kp AMPS   &kp GRAVE  &kp TILDE   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │          │          │    $     │    %     │     ^    │    _     │
-           &sk LALT   &sk LCTRL  &sk LSHFT   &sk LGUI   &sk RALT            &kp PG_DN   &kp DOLLAR  &kp PRCNT &kp CARET  &kp UNDER
+           &sk LALT   &sk LGUI  &sk LSHFT   &sk LCTRL   &sk RALT            &kp PG_DN   &kp DOLLAR  &kp PRCNT &kp CARET  &kp UNDER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │          │          │     !    │   @      │     #    │     /    │
-           &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp TAB    &sk LG(V)             &trans      &kp EXCL  &kp AT_SIGN &kp POUND   &trans
+           &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp TAB    &sk LC(V)             &trans      &kp EXCL  &kp AT_SIGN &kp POUND   &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                   &trans     &trans     &trans                &trans      &trans      &trans
         //                      ╰──────────┴──────────┴──────────╯          ╰──────────┴──────────┴──────────╯
@@ -158,8 +158,8 @@
         //│          │          │          │          │          │          │    F12   │    F7    │   F8     │    F9    │          │
           &sys_reset &bt BT_CLR &out OUT_TOG  &none      &none               &kp F12     &kp F7     &kp F8     &kp F9     &kp PSCRN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │          │   F11    │    F4    │    F5    │    F6    │  crop    │
-          &bootloader &bt BT_NXT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2       &kp F11   &kp F4     &kp F5     &kp F6    &kp LC(LS(PSCRN))
+        //│          │          │          │          │          │          │   F11    │    F4    │    F5    │    F6    │ crop win │
+          &bootloader &bt BT_NXT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2       &kp F11   &kp F4     &kp F5     &kp F6    &kp LG(LS(S))
         //├──────────┼──────────┼──────────┼──────────┼──────────┤          ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │          │   F10    │    F1    │     F2   │    F3    │ mac crop │
           &none      &bt BT_PRV  &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5      &kp F10     &kp F1     &kp F2    &kp F3    &kp LG(LS(N4))
