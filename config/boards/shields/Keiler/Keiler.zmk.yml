@@ -5,7 +5,6 @@ type: shield
 url: https://github.com/jonathanforking/Keiler
 requires: 
   - pro_micro
-  - seeeduino_xiao_ble
 features:
   - keys
 siblings:
