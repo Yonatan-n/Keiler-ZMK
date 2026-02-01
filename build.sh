@@ -6,12 +6,12 @@ TIMESTAMP="${TIMESTAMP:-$(date -u +"%Y%m%d%H%M")}"
 mkdir -p firmware
 
 # Left half
-west build -s zmk/app -b nice_nano_v2 -d build/left -p \
+west build -s zmk/app -b nice_nano -d build/left -p \
   -- -DSHIELD=Keiler_left
 cp build/left/zephyr/zmk.uf2 firmware/${TIMESTAMP}_left.uf2
 
 # Right half
-west build -s zmk/app -b nice_nano_v2 -d build/right -p \
+west build -s zmk/app -b nice_nano -d build/right -p \
   -- -DSHIELD=Keiler_right
 cp build/right/zephyr/zmk.uf2 firmware/${TIMESTAMP}_right.uf2
 
@@ -21,7 +21,7 @@ west build -s zmk/app -b seeeduino_xiao_ble -d build/dongle -p \
 cp build/dongle/zephyr/zmk.uf2 firmware/${TIMESTAMP}_dongle.uf2
 
 # nice!nano reset
-west build -s zmk/app -b nice_nano_v2 -d build/nn_reset -p \
+west build -s zmk/app -b nice_nano -d build/nn_reset -p \
   -- -DSHIELD=settings_reset
 cp build/nn_reset/zephyr/zmk.uf2 firmware/nn_reset.uf2
 
