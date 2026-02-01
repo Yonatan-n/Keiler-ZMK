@@ -1,19 +1,31 @@
 #!/bin/bash
+set -e
 
-PWD=$(pwd)
 TIMESTAMP="${TIMESTAMP:-$(date -u +"%Y%m%d%H%M")}"
 
-west build -s zmk/app -p -b nice_nano_v2 -- -DSHIELD="Keiler_left" -DZMK_CONFIG="${PWD}/config"
-cp build/zephyr/zmk.uf2 "./firmware/${TIMESTAMP}_left.uf2"
+mkdir -p firmware
 
-west build -s zmk/app -p -b nice_nano_v2 -- -DSHIELD="Keiler_right" -DZMK_CONFIG="${PWD}/config"
-cp build/zephyr/zmk.uf2 "./firmware/${TIMESTAMP}_right.uf2"
+# Left half
+west build -s zmk/app -b nice_nano_v2 -d build/left -p \
+  -- -DSHIELD=Keiler_left
+cp build/left/zephyr/zmk.uf2 firmware/${TIMESTAMP}_left.uf2
 
-west build -s zmk/app -p -b seeeduino_xiao_ble -- -DSHIELD="Keiler_dongle" -DZMK_CONFIG="${PWD}/config"
-cp build/zephyr/zmk.uf2 "./firmware/${TIMESTAMP}_dongle.uf2"
+# Right half
+west build -s zmk/app -b nice_nano_v2 -d build/right -p \
+  -- -DSHIELD=Keiler_right
+cp build/right/zephyr/zmk.uf2 firmware/${TIMESTAMP}_right.uf2
 
-west build -s zmk/app -p -b nice_nano_v2 -- -DSHIELD="settings_reset" -DZMK_CONFIG="${PWD}/config"
-cp build/zephyr/zmk.uf2 "./firmware/nn_reset.uf2"
+# Dongle
+west build -s zmk/app -b seeeduino_xiao_ble -d build/dongle -p \
+  -- -DSHIELD=Keiler_dongle
+cp build/dongle/zephyr/zmk.uf2 firmware/${TIMESTAMP}_dongle.uf2
 
-west build -s zmk/app -p -b seeeduino_xiao_ble -- -DSHIELD="settings_reset" -DZMK_CONFIG="${PWD}/config"
-cp build/zephyr/zmk.uf2 "./firmware/xia_reset.uf2"
+# nice!nano reset
+west build -s zmk/app -b nice_nano_v2 -d build/nn_reset -p \
+  -- -DSHIELD=settings_reset
+cp build/nn_reset/zephyr/zmk.uf2 firmware/nn_reset.uf2
+
+# XIAO reset
+west build -s zmk/app -b seeeduino_xiao_ble -d build/xia_reset -p \
+  -- -DSHIELD=settings_reset
+cp build/xia_reset/zephyr/zmk.uf2 firmware/xia_reset.uf2
